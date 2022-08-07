@@ -1,0 +1,209 @@
+/*
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Cyan: hsl(179, 62%, 43%)
+- Bright Yellow: hsl(71, 73%, 54%)
+
+### Neutral
+
+- Light Gray: hsl(204, 43%, 93%)
+- Grayish Blue: hsl(218, 22%, 67%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Karla](https://fonts.google.com/specimen/Karla)
+- Weights: 400, 700
+*/
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.35rem;
+}
+
+:root {
+  /* primary color */
+  --cyan: hsl(179, 62%, 43%);
+  --light-cyan: hsl(179, 47.4%, 51.6%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --dark-yellow: hsl(71, 73%, 45%);
+  --slightly-light-cyan: hsl(182, 54%, 62%);
+
+  /* neutral color */
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+.font-size-body1 {
+  letter-spacing: 0.5px;
+  line-height: 2em;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+body {
+  background-color: var(--light-gray);
+}
+
+.price-component {
+  margin: 2em;
+}
+
+.container {
+  padding: 2em;
+}
+
+/* child selector */
+.container > * {
+  margin-bottom: 1.75rem;
+}
+
+.container > *:last-child {
+  margin-bottom: 0em;
+}
+
+.container:first-child {
+  background-color: white;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.container:last-child {
+  border-radius: 0px 0px 5px 5px;
+}
+
+.container:first-child .title {
+  color: var(--cyan);
+}
+
+.container:first-child .subtitle {
+  color: var(--bright-yellow);
+}
+
+.container:first-child .content {
+  color: var(--grayish-blue);
+}
+
+/* 2th and 3rd containers */
+.container:nth-child(2),
+.container:nth-child(3) {
+  color: white;
+}
+
+.container:nth-child(2) .content,
+.container:nth-child(3) .content {
+  color: var(--light-gray);
+}
+
+/* 2th container */
+.container:nth-child(2) {
+  background-color: var(--cyan);
+}
+
+.container:nth-child(2) p {
+  margin-top: 1em;
+}
+
+.container:nth-child(2) .subtitle {
+  display: flex;
+  align-items: center;
+  color: var(--slightly-light-cyan);
+}
+
+.container:nth-child(2) .subtitle .price {
+  font-size: 2.5rem;
+  margin-right: 0.3em;
+  color: var(--light-gray);
+}
+
+.container:nth-child(2) button {
+  padding: 1em;
+  width: 100%;
+  border: none;
+  background-color: var(--bright-yellow);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container:nth-child(2) button:hover {
+  background-color: var(--dark-yellow);
+}
+
+.container:nth-child(3) {
+  background-color: var(--light-cyan);
+}
+
+.container:nth-child(3) .content {
+  /*color: #86d9d9;*/
+  color: var(--light-gray);
+}
+
+.container:nth-child(3) .content p + p {
+  margin-top: 0.2em;
+}
+
+@media (min-width: 700px) {
+  .container:first-child {
+    grid-area: community;
+  }
+
+  .container:nth-child(2) {
+    grid-area: price;
+  }
+
+  .container:last-child {
+    grid-area: reason;
+  }
+
+  .price-component {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "community community"
+      "price reason";
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
