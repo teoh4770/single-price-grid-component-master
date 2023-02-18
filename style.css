@@ -1,209 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+
 /*
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-### Primary
-
-- Cyan: hsl(179, 62%, 43%)
-- Bright Yellow: hsl(71, 73%, 54%)
-
-### Neutral
-
-- Light Gray: hsl(204, 43%, 93%)
-- Grayish Blue: hsl(218, 22%, 67%)
-
-## Typography
-
-### Body Copy
-
-- Font size: 16px
-
-### Font
-
-- Family: [Karla](https://fonts.google.com/specimen/Karla)
-- Weights: 400, 700
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
 */
-@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  text-decoration: 0;
+}
 
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Karla", sans-serif;
   font-size: 16px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  padding: 0;
-  margin: 0;
-}
-
-h2 {
-  font-size: 1.35rem;
-}
-
-:root {
-  /* primary color */
-  --cyan: hsl(179, 62%, 43%);
-  --light-cyan: hsl(179, 47.4%, 51.6%);
-  --bright-yellow: hsl(71, 73%, 54%);
-  --dark-yellow: hsl(71, 73%, 45%);
-  --slightly-light-cyan: hsl(182, 54%, 62%);
-
-  /* neutral color */
-  --light-gray: hsl(204, 43%, 93%);
-  --grayish-blue: hsl(218, 22%, 67%);
-}
-
-.font-size-body1 {
-  letter-spacing: 0.5px;
-  line-height: 2em;
-  font-size: 1rem;
-  font-weight: 400;
+html, body {
+  height: 100%;
 }
 
 body {
-  background-color: var(--light-gray);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-.price-component {
-  margin: 2em;
+/* link element that do not have a class got the default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
 }
 
-.container {
-  padding: 2em;
+/* make images easier to work with */
+img, 
+picture, 
+video, 
+canvas, 
+svg {
+  display: block;
+  max-width: 100%;
+  line-height: 0;
 }
 
-/* child selector */
-.container > * {
-  margin-bottom: 1.75rem;
+ /* inherit fonts for input and buttons */
+input, 
+button, 
+textarea, 
+select {
+  font: inherit;
 }
 
-.container > *:last-child {
-  margin-bottom: 0em;
+/* prevent the text overflow */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+} 
+
+/* remove all the list style */
+ul, ol, li {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 0;
 }
 
-.container:first-child {
-  background-color: white;
-  border-radius: 5px 5px 0px 0px;
-}
-
-.container:last-child {
-  border-radius: 0px 0px 5px 5px;
-}
-
-.container:first-child .title {
-  color: var(--cyan);
-}
-
-.container:first-child .subtitle {
-  color: var(--bright-yellow);
-}
-
-.container:first-child .content {
-  color: var(--grayish-blue);
-}
-
-/* 2th and 3rd containers */
-.container:nth-child(2),
-.container:nth-child(3) {
-  color: white;
-}
-
-.container:nth-child(2) .content,
-.container:nth-child(3) .content {
-  color: var(--light-gray);
-}
-
-/* 2th container */
-.container:nth-child(2) {
-  background-color: var(--cyan);
-}
-
-.container:nth-child(2) p {
-  margin-top: 1em;
-}
-
-.container:nth-child(2) .subtitle {
-  display: flex;
-  align-items: center;
-  color: var(--slightly-light-cyan);
-}
-
-.container:nth-child(2) .subtitle .price {
-  font-size: 2.5rem;
-  margin-right: 0.3em;
-  color: var(--light-gray);
-}
-
-.container:nth-child(2) button {
-  padding: 1em;
-  width: 100%;
-  border: none;
-  background-color: var(--bright-yellow);
-  color: white;
-  border-radius: 5px;
+/* reset the button properties */
+button {
+  all: unset;
   cursor: pointer;
 }
 
-.container:nth-child(2) button:hover {
-  background-color: var(--dark-yellow);
+/* color */
+:root {
+  /* primary */
+  --cyan-1: hsla(179, 62%, 43%, 1);
+  --cyan-2: hsla(179, 48%, 52%, 1);
+  --cyan-3: hsla(179, 48%, 72%, 1);
+  --green: hsla(71, 73%, 54%, 1);
+  /* neutral */
+  --gray: hsla(218, 22%, 67%, 1);
+  --light-gray: hsla(204, 43%, 93%, 1);
+  --white: hsla(218, 3%, 99%, 1);
 }
 
-.container:nth-child(3) {
-  background-color: var(--light-cyan);
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-rendering: optimizeSpeed;
+  font-family: "Karla", sans-serif;
+  background-color: var(--light-gray);
 }
 
-.container:nth-child(3) .content {
-  /*color: #86d9d9;*/
-  color: var(--light-gray);
+/* typography */
+h1,
+h1 span {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.0187rem;
+  color: var(--cyan-1);
+  padding-bottom: 1.5rem;
 }
 
-.container:nth-child(3) .content p + p {
-  margin-top: 0.2em;
+h2,
+h2 span {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.0141rem;
+  color: var(--green);
+  padding-bottom: 0.625rem;
 }
 
-@media (min-width: 700px) {
-  .container:first-child {
-    grid-area: community;
+h3 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.3125rem;
+  letter-spacing: -0.0141rem;
+  color: var(--white);
+  padding-bottom: 1.125rem;
+}
+
+p,
+.box-2 p {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.625rem;
+  letter-spacing: -0.0125rem;
+}
+
+p {
+  color: var(--gray);
+}
+
+.box-2 p {
+  color: var(--white);
+  padding-bottom: 2.5rem;
+}
+
+/* new html page */
+.line-over {
+  text-transform: uppercase;
+  color: rgb(69, 103, 255);
+  text-decoration: line-through;
+}
+
+strong {
+  font-weight: 700;
+  color: rgb(69, 103, 255);
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.3125rem;
+  letter-spacing: -0.025rem;
+  color: var(--white);
+  padding-bottom: 0.25rem;
+}
+
+.price span {
+  font-size: 1rem;
+}
+
+li, ul span {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: -0.0109rem;
+  color: var(--white);
+}
+
+ul span {
+  opacity: 75%;
+  padding-left: 0.25rem;
+}
+
+ul span:hover {
+  color: var(--green);
+  opacity: initial;
+}
+
+/* *** */
+
+.container,
+.container-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 39.6875rem;
+  box-shadow: 0rem 0.9375rem 1.875rem rgba(0, 81, 171, 0.148847);
+  margin: 2.5rem 2rem;
+}
+
+.container-2, 
+.container-2 ul li,
+.container-2 .btn-2 {
+  filter: hue-rotate(240deg);
+} 
+
+.btn,
+.btn-2 {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  letter-spacing: -0.0125rem;
+  padding: 1rem 2rem;
+  background-color: var(--green);
+  border-radius: 0.3125rem;
+  border: 0.0625rem solid var(--green);
+  transition: ease 0.3s;
+}
+
+.btn:hover, 
+.btn-2:hover {
+  background-color: hsla(71, 73%,54%, 0.01);
+  border: 0.0625rem solid var(--green);
+}
+
+button {
+  color: white;
+}
+
+.box-1 {
+  background-color: var(--white);
+  grid-column: span 2;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.box-2 {
+  background-color: var(--cyan-1);
+  border-radius: 0 0 0 0.5rem;
+}
+
+.box-3 {
+  background-color: var(--cyan-2);
+  border-radius: 0 0 0.5rem 0;
+}
+
+.box-1,
+.box-2,
+.box-3 {
+  padding: 2.5rem;
+}
+
+
+/* mobile */
+@media(max-width: 38.75rem) {
+  .container,
+  .container-2 {
+    grid-template-columns: 1fr;
   }
 
-  .container:nth-child(2) {
-    grid-area: price;
+  .box-1 {
+    grid-column: span 1;
   }
 
-  .container:last-child {
-    grid-area: reason;
+  .box-2 {
+    border-radius: 0rem;
   }
 
-  .price-component {
-    max-width: 700px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "community community"
-      "price reason";
+  .box-3 {
+    border-radius: 0 0 0.5rem 0.5rem;
   }
 
-  body {
+  .box-2 p {
+    padding-bottom: 1.875rem;
+  }
+
+  .box-1,
+  .box-2,
+  .box-3 {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media(max-width: 18.75rem) {
+  .btn,
+  .btn-2 {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-size: 12.8px;
+    padding: 0.5rem 0.75rem;
   }
 }
+
+
+

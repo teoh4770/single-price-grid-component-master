@@ -1,60 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-    <title>Frontend Mentor | Single Price Grid Component</title>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="price-component">
-      <section class="container">
-        <h2 class="title">Join our community</h2>
-        <h3 class="subtitle">30-day, hassle-free money back guarantee</h3>
-        <p class="content font-size-body1">
-          Gain access to our full library of tutorials along with expert code
-          reviews. Perfect for any developers who are serious about honing their
-          skills.
-        </p>
-      </section>
-      <section class="container">
-        <h2 class="title">Monthly Subscription</h2>
-        <div class="content">
-          <h3 class="subtitle">
-            <span class="price">&dollar;29</span> per month
-          </h3>
-          <p>Full access for less than &dollar;1 a day</p>
-        </div>
-        <button class="button">Sign Up</button>
-      </section>
-      <section class="container">
-        <h2 class="title">Why Us</h2>
-        <div class="content">
-          <p>Tutorials by industry experts</p>
-          <p>Peer &amp; expert code review</p>
-          <p>Coding exercises</p>
-          <p>Access to our GitHub repos</p>
-          <p>Community forum</p>
-          <p>Flashcard decks</p>
-          <p>New videos every week</p>
-        </div>
-      </section>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Single Price Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="box box-1">
+      <h1>Join our community</h1>
+      <h2>30-day, hassle-free money back guarantee</h2>
+      <p>Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honing their skills.</p>
     </div>
+    <div class="box box-2">
+      <h3>Monthly Subscription</h3>
+      <h4 class="price">$29 <span>per month</span></h4>
+      <p>Full access for less than $1 a day</p>
+      <form action="changed-color.html">
+        <button class="btn" type="submit">🎨Change Color</button>
+      </form>
+    </div>
+    <div class="box box-3">
+      <h3>Why Us</h3>
+      <ul>
+        <li>🚀<span> Tutorials by industry experts</span></li>
+        <li>🕵 <span> Peer & expert code review</span></li>
+        <li>💻<span> Coding exercises</span></li>
+        <li>📂<span> Access to our GitHub repos</span></li>
+        <li>🙋<span> Community forum</span></li>
+        <li>📑<span> Flashcard decks</span></li>
+        <li>😎<span> New videos every week</span></li>
+      </ul>
+    </div>
+  </main>
 
-    <footer>
-      <p class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by <a href="#">Chee Kian Teoh</a>.
-      </p>
-    </footer>
-  </body>
+  <script src="app.js"></script>
+</body>
 </html>
